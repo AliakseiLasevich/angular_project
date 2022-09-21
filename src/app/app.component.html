@@ -1,3 +1,11 @@
 <div>
-  init
+  <div>Selected animal:    {{selectedAnimal}}</div>
+  <div>
+    <button *ngFor="let animal of animals"
+            (click)="selectAnimal($event, animal)">
+      {{animal.name}}
+    </button>
+  </div>
+
+
 </div>

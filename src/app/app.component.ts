@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular_project';
+  selectedAnimal: string;
+  animals: [{ name: string }, { name: string }];
+
+  constructor() {
+    this.selectedAnimal = '';
+    this.animals = [{name: "dog"}, {name: "cat"}];
+  }
+
+  selectAnimal(event: MouseEvent, animal: any) {
+    this.selectedAnimal = animal.name;
+    event.preventDefault();
+  }
 }
