@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy{
   selectedAnimal: string;
   animals: [{ name: string }, { name: string }];
 
@@ -17,5 +17,13 @@ export class AppComponent {
   selectAnimal(event: MouseEvent, animal: any) {
     this.selectedAnimal = animal.name;
     event.preventDefault();
+  }
+
+  ngOnInit(): void {
+    alert("component initiated")
+  }
+
+  ngOnDestroy(): void {
+    alert("component destroyed")
   }
 }
