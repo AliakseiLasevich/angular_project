@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {repeat} from "rxjs";
 
 @Component({
   selector: 'app-color',
@@ -9,6 +8,7 @@ import {repeat} from "rxjs";
 export class ColorComponent implements OnInit {
 
   private _color: string;
+  redColor: string = 'red';
   num: number = 0;
   colors: string[] = ['black', 'grey', 'white'];
 
@@ -34,5 +34,9 @@ export class ColorComponent implements OnInit {
     this.color = this.colors[this.num % 3];
     setTimeout(this.switchColorFiveTimes, 2000);
   };
+
+  writeBlack = () =>{
+    return 'black';
+  }
 
 }
