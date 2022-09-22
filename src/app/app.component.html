@@ -16,5 +16,6 @@
   <div>Color from the @Input field:</div>
   <div>Pass @Output value to its parent component</div>
   <app-form-board [color]="'red'"
-                  (newItemEvent)="printItemToConsole($event)"></app-form-board>
+                  (newItemEvent)="printItemToConsole($event)"
+                  [ngClass]="'belarus'"></app-form-board>
 </div>
