@@ -18,5 +18,6 @@
   <div>Pass @Output value to its parent component</div>
   <app-form-board [color]="'red'"
                   (newItemEvent)="printItemToConsole($event)"
-                  [ngClass]="'belarus'"></app-form-board>
+                  [ngClass]="'belarus'"
+                  [mwFavorite]="false"></app-form-board>
 </div>
