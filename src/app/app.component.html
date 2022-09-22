@@ -9,7 +9,7 @@
   <div>
     <button *ngFor="let animal of animals"
             (click)="selectAnimal($event, animal)"
-             >
+    >
       {{animal.name}}
     </button>
   </div>
@@ -21,4 +21,6 @@
                   [ngClass]="'belarus'"
                   mwFavorite
                   [changeHovering]=false></app-form-board>
+  <hr>
+  <span>{{'abcdefg' | slice: 0:4 | uppercase}}</span>
 </div>
