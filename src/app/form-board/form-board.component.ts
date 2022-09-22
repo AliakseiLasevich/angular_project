@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-form-board',
@@ -7,8 +7,13 @@ import {Component, Input} from '@angular/core';
 })
 export class FormBoardComponent {
   @Input() color: string;
+  @Output() newItemEvent = new EventEmitter<string>();
 
   constructor() {
     this.color = ''
+  }
+
+  produceEvent(value: string) {
+    this.newItemEvent.emit(value);
   }
 }

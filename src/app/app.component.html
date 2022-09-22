@@ -12,8 +12,9 @@
       {{animal.name}}
     </button>
   </div>
-<hr>
+  <hr>
   <div>Color from the @Input field:</div>
-  <app-form-board [color]="'red'"></app-form-board>
-
+  <div>Pass @Output value to its parent component</div>
+  <app-form-board [color]="'red'"
+                  (newItemEvent)="printItemToConsole($event)"></app-form-board>
 </div>

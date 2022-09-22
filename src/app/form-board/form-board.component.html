@@ -1,2 +1,4 @@
 <div>{{color}}</div>
 
+<input type="text" id="item-input" #newItem>
+<button type="button" (click)="produceEvent(newItem.value)">Pass value to the parent component</button>

@@ -1,4 +1,4 @@
-import {Component, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -26,4 +26,8 @@ export class AppComponent implements OnInit, OnDestroy{
   ngOnDestroy(): void {
     alert("component destroyed")
   }
+
+    printItemToConsole(newItem: string) {
+        console.log(newItem);
+    }
 }
