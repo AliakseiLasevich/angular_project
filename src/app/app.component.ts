@@ -20,11 +20,11 @@ export class AppComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit(): void {
-    alert("component initiated")
+    console.log("component initiated")
   }
 
   ngOnDestroy(): void {
-    alert("component destroyed")
+    console.log("component destroyed")
   }
 
     printItemToConsole(newItem: string) {

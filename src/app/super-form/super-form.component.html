@@ -1,0 +1,22 @@
+<form [formGroup]="ivanForm" (ngSubmit)="submit()">
+
+  <!--  type="button" disables default button behavior to prevent page reload -->
+  <button type="button">Useless buton</button>
+  <hr>
+
+  <p>
+    <input id="firstName" type="text" placeholder="name" formControlName="firstName">
+    <span *ngIf="ivanForm.get('firstName')!.invalid   &&
+                 ivanForm.get('firstName')!.touched">   Only Ivan please  </span>
+
+
+  <p>
+    <input id="lastName" type="text" placeholder="lastname" formControlName="lastName">
+    <span *ngIf="ivanForm.get('lastName')!.invalid   &&
+                 ivanForm.get('lastName')!.touched">   Only Ivanov please </span>
+  </p>
+
+  <p>
+    <button type="submit" [disabled]="ivanForm.invalid">Submit</button>
+  </p>
+</form>
