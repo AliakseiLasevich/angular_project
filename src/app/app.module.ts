@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ColorComponent } from './color/color.component';
 import { FormBoardComponent } from './form-board/form-board.component';
 import {FavoriteDirective} from "./directive/favorite.directive";
+import {CustomPipe} from "./Pipes/custom.pipe";
 
 @NgModule({
   declarations: [
     AppComponent,
     ColorComponent,
     FormBoardComponent,
-    FavoriteDirective
+    FavoriteDirective,
+    CustomPipe
   ],
   imports: [
     BrowserModule,
