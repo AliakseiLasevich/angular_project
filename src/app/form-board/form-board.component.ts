@@ -8,6 +8,7 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
 export class FormBoardComponent {
   @Input() color: string;
   @Output() newItemEvent = new EventEmitter<string>();
+  countries = ['Belarus', 'Poland', 'USA']
 
   constructor() {
     this.color = ''

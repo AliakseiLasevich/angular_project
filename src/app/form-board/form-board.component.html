@@ -2,3 +2,7 @@
 
 <input type="text" id="item-input" #newItem>
 <button type="button" (click)="produceEvent(newItem.value)">Pass value to the parent component</button>
+
+<div *ngIf="newItem.value === 'ok'">Ok is here!</div>
+
+<div *ngFor="let country of countries">{{ country }}</div>
