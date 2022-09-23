@@ -27,4 +27,12 @@ export class SuperFormComponent implements OnInit {
   submit() {
     console.log(this.ivanForm);
   }
+
+  clearTheForm() {
+    this.ivanForm.patchValue({
+      firstName: '',
+      lastName: '',
+      address: {country: '', city: ''}
+    })
+  }
 }

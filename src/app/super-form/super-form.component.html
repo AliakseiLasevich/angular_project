@@ -20,6 +20,7 @@
   <p>
   <div formGroupName="address">
     <select formControlName="country">
+      <option value=""></option>
       <option value="BLR">Belarus</option>
       <option value="PL">Poland</option>
     </select>
@@ -27,6 +28,7 @@
   </div>
 
   <p>
+    <button type="button" (click)="clearTheForm()">Clear form</button>
     <button type="submit" [disabled]="ivanForm.invalid">Submit</button>
   </p>
 </form>
