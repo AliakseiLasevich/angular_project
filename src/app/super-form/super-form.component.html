@@ -16,6 +16,16 @@
                  ivanForm.get('lastName')!.touched">   Only Ivanov please </span>
   </p>
 
+
+  <p>
+  <div formGroupName="address">
+    <select formControlName="country">
+      <option value="BLR">Belarus</option>
+      <option value="PL">Poland</option>
+    </select>
+    <input type="text" placeholder="city" formControlName="city">
+  </div>
+
   <p>
     <button type="submit" [disabled]="ivanForm.invalid">Submit</button>
   </p>

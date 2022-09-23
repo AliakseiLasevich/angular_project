@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup, FormControl, Validators, ValidatorFn} from "@angular/forms";
+import {FormGroup, FormControl, Validators, ValidatorFn, Validator} from "@angular/forms";
 
 @Component({
   selector: 'app-super-form',
@@ -13,7 +13,11 @@ export class SuperFormComponent implements OnInit {
   constructor() {
     this.ivanForm = new FormGroup({
       firstName: new FormControl('', Validators.compose([Validators.pattern('Ivan'), Validators.required])),
-      lastName: new FormControl('', Validators.compose([Validators.pattern('Ivanov'), Validators.required]))
+      lastName: new FormControl('', Validators.compose([Validators.pattern('Ivanov'), Validators.required])),
+      address: new FormGroup({
+        country: new FormControl(''),
+        city: new FormControl('')
+      })
     });
   }
 
