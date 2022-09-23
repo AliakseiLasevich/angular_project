@@ -25,6 +25,7 @@
       <option value="PL">Poland</option>
     </select>
     <input type="text" placeholder="city" formControlName="city">
+  <span *ngIf="ivanForm.get('address.country')!.invalid">   Only Belarus please </span>
   <span *ngIf="ivanForm.get('address.city')!.invalid">   Only Minsk please </span>
   </div>
 

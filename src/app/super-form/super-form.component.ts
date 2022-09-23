@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators} from "@angular/forms";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-super-form',
@@ -15,8 +16,8 @@ export class SuperFormComponent implements OnInit {
       firstName: new FormControl('', Validators.compose([Validators.pattern('Ivan'), Validators.required])),
       lastName: new FormControl('', Validators.compose([Validators.pattern('Ivanov'), Validators.required])),
       address: new FormGroup({
-        country:  new FormControl(''),
-        city: new FormControl('',this.minskValidator)
+        country: new FormControl('', [], this.asyncValidator),
+        city: new FormControl('', this.minskValidator)
       })
     });
   }
@@ -43,5 +44,17 @@ export class SuperFormComponent implements OnInit {
       }
     }
     return null;
+  }
+
+  asyncValidator(control: AbstractControl): Promise<any> | Observable<any> {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        if (control.touched && control.value !== 'BLR') {
+          resolve({notBelarus: true})
+        } else {
+          resolve(null)
+        }
+      }, 1500)
+    })
   }
 }
