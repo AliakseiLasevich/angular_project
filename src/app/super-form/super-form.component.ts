@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup, FormControl, Validators, ValidatorFn, Validator} from "@angular/forms";
+import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-super-form',
@@ -15,8 +15,8 @@ export class SuperFormComponent implements OnInit {
       firstName: new FormControl('', Validators.compose([Validators.pattern('Ivan'), Validators.required])),
       lastName: new FormControl('', Validators.compose([Validators.pattern('Ivanov'), Validators.required])),
       address: new FormGroup({
-        country: new FormControl(''),
-        city: new FormControl('')
+        country:  new FormControl(''),
+        city: new FormControl('',this.minskValidator)
       })
     });
   }
@@ -34,5 +34,14 @@ export class SuperFormComponent implements OnInit {
       lastName: '',
       address: {country: '', city: ''}
     })
+  }
+
+  minskValidator(control: AbstractControl): ValidationErrors | null {
+    if (control.parent?.get('country')?.value === 'BLR' && control.value !== 'Minsk') {
+      return {
+        wrong: true
+      }
+    }
+    return null;
   }
 }
