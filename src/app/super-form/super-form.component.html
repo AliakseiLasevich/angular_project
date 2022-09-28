@@ -36,3 +36,7 @@
     <button type="submit" class="btn btn-primary" [disabled]="ivanForm.invalid">Submit</button>
   </p>
 </form>
+
+<div [ngStyle]="{backgroundColor: getColor()}">
+  {{status}}
+</div>

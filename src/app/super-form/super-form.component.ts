@@ -10,6 +10,7 @@ import {Observable} from "rxjs";
 export class SuperFormComponent implements OnInit {
 
   ivanForm: FormGroup;
+  status = '';
 
   constructor() {
     this.ivanForm = new FormGroup({
@@ -56,5 +57,14 @@ export class SuperFormComponent implements OnInit {
         }
       }, 1500)
     })
+  }
+
+  getColor(): string {
+    const randomValue = Math.random();
+    if (randomValue > 0.5) {
+      this.status = 'green';
+    }
+    else this.status = 'red';
+    return this.status;
   }
 }
