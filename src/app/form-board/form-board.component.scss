@@ -1,0 +1,9 @@
+@import "../scss/mixins";
+@import "../../styles";
+
+div {
+    @include red_background;
+    @include margin_10px;
+    @extend .centerText;
+}
+
