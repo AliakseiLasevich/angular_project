@@ -37,6 +37,7 @@
   </p>
 </form>
 
-<div [ngStyle]="{backgroundColor: getColor()}">
-  {{status}}
+<div [ngStyle]="{backgroundColor: getColor()}"
+     [ngClass]="{redClass: status === 'red'}">
+        {{status}}
 </div>
