@@ -7,8 +7,10 @@
   <p>
     <input id="firstName" type="text" placeholder="name" formControlName="firstName">
     <span *ngIf="ivanForm.get('firstName')!.invalid   &&
-                 ivanForm.get('firstName')!.touched">   Only Ivan please  </span>
-
+                 ivanForm.get('firstName')!.touched; else validInputData">   Only Ivan please  </span>
+    <ng-template #validInputData>
+      <p>Looks good!</p>
+    </ng-template>
 
   <p>
     <input id="lastName" type="text" placeholder="lastname" formControlName="lastName">
@@ -30,7 +32,7 @@
   </div>
 
   <p>
-    <button type="button" (click)="clearTheForm()">Clear form</button>
-    <button type="submit" [disabled]="ivanForm.invalid">Submit</button>
+    <button type="button" class="btn btn-primary" (click)="clearTheForm()">Clear form</button>
+    <button type="submit" class="btn btn-primary" [disabled]="ivanForm.invalid">Submit</button>
   </p>
 </form>
